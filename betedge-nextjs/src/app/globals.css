@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:     #0d0f14;
+  --bg2:    #141720;
+  --bg3:    #1c2030;
+  --bg4:    #242840;
+  --border: #2a2f45;
+  --text:   #e8eaf0;
+  --text2:  #8890aa;
+  --text3:  #555d7a;
+  --green:  #00d47e;
+  --blue:   #4d8fff;
+  --yellow: #f5c842;
+  --red:    #ff5757;
+  --purple: #a78bfa;
+  --teal:   #2dd4bf;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* Composants réutilisables */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.btn {
+  padding: 7px 13px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn:hover   { opacity: 0.82; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-green  { background: #00d47e18; color: #00d47e; border: 1px solid #00d47e35; }
+.btn-blue   { background: #4d8fff15; color: #4d8fff; border: 1px solid #4d8fff35; }
+.btn-yellow { background: #f5c84215; color: #f5c842; border: 1px solid #f5c84235; }
+.btn-red    { background: #ff575715; color: #ff5757; border: 1px solid #ff575735; }
+.btn-purple { background: #a78bfa15; color: #a78bfa; border: 1px solid #a78bfa35; }
+.btn-teal   { background: #2dd4bf15; color: #2dd4bf; border: 1px solid #2dd4bf35; }
+.btn-ghost  { background: none; color: var(--text2); border: 1px solid var(--border); }
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.field label {
+  font-size: 11px;
+  color: var(--text3);
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--green);
+}
+.field select option { background: var(--bg2); }
+
+.spinner {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
